@@ -508,8 +508,7 @@ class Modal extends React.Component  {
 
   return(
     <React.Fragment>
-    <div className={"fix top right mt10 mr10 bc-black bw1 ba br10 ph10 pv3 syne fw800 z10 about-button " + (isMobile ? "f16 pv5 ": "f32")}
-    onClick={this.props.openModal}>?</div>
+    
     <span className={(isMobile ? "about-modal-x about-modal-x-mobile c-white " : "about-modal-x") + (this.props.open ? "" : "dn")} onClick={this.props.closeModal}>X</span>
     <div className={(this.props.open ? "about-modal" : "about-modal-closed")}>
     <div className={(isMobile ? "about-modal-inner about-modal-inner-mobile  about-modal-inner-no-bg" : "about-modal-inner")}>
@@ -581,9 +580,12 @@ class App extends React.Component {
 
     
 
-    
+      {/**
       <Modal open={this.state.about} openModal={this.openModalAbout} closeModal={this.closeModalAbout} text={"Rogue On Arrival is a platform that offers both artists and fans the ability to foster a unique and mutually beneficial relationship while also funding the initial growth stages of an artists career. Signup for the waitlist now to get updates and first access."}/>
-      
+      **/}
+
+      <Link to="/about" className={"c-white"}><div className={"fix top right mt10 mr10 bc-black bw1 ba br10 ph10 pv3 syne fw800 c-black z10 about-button " + (isMobile ? "f16 pv5 ": "f32")}
+      >?</div></Link>
       
       <div className={"pt20 df aic br bc-black bw1 fc " + (isMobile ? "x vh60" : "w40 jcb vh100")}>
       <div className="df fc f64 motter"><img src={roalogo}/>

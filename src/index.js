@@ -29,7 +29,7 @@ function MobilePage(props) {
     
     <span className={(isMobile ? "about-modal-x about-modal-x-mobile" : "about-modal-x")} onClick={props.closeModal}><Link to="/">X</Link></span>
     <div className={(props.open ? "about-modal" : "about-modal-closed")}>
-    <div className={(isMobile ? "about-modal-inner about-modal-inner-mobile" : "about-modal-inner")}>
+    <div className={(isMobile ? "about-modal-inner about-modal-inner-mobile " : "about-modal-inner ") + (props.green ? "about-modal-inner-no-bg" : "")}>
     
     
 
@@ -47,6 +47,10 @@ ReactDOM.render(
   	<Router>
   	<Route exact path="/">
     <App />
+    </Route>
+    
+    <Route path="/about">
+    <MobilePage open={true} title={"About"} green={true} text={"Rogue On Arrival is a platform that offers both artists and fans the ability to foster a unique and mutually beneficial relationship while also funding the initial growth stages of an artists career. Signup for the waitlist now to get updates and first access."}/>
     </Route>
     <Route path="/music">
     <MobilePage open={true} title={"Music"} text={"ROA only invites talented musicians who truly enjoy engaging with their fans.  Artists on our platform understand that building a meaningful connection is both rewarding and essential to growing a career.  For new fans, this is a great way to discover your next favorite artist.  For current fans, there is an opportunity to have a deeper relationship with the artists you already like."}/>
