@@ -510,10 +510,11 @@ class Modal extends React.Component  {
     <React.Fragment>
     <div className={"fix top right mt10 mr10 bc-black bw1 ba br10 ph10 pv3 syne fw800 z10 about-button " + (isMobile ? "f16 pv5 ": "f32")}
     onClick={this.props.openModal}>?</div>
+    <span className={(isMobile ? "about-modal-x about-modal-x-mobile c-white " : "about-modal-x") + (this.props.open ? "" : "dn")} onClick={this.props.closeModal}>X</span>
     <div className={(this.props.open ? "about-modal" : "about-modal-closed")}>
-    <div className={(isMobile ? "about-modal-inner about-modal-inner-mobile" : "about-modal-inner")}>
-    <span className={(isMobile ? "about-modal-x about-modal-x-mobile" : "about-modal-x")} onClick={this.props.closeModal}>X</span>
-    <span className="tl mabry about-modal-content">{this.props.text}</span>
+    <div className={(isMobile ? "about-modal-inner about-modal-inner-mobile  about-modal-inner-no-bg" : "about-modal-inner")}>
+    <div className="pt30"></div>
+    <span className={"tl mabry about-modal-content " + (isMobile ? "f16" : "")}>{this.props.text}</span>
     </div>
     </div>
     </React.Fragment>

@@ -84,9 +84,9 @@ canvas:active, canvas:focus {
   transition: transform 400ms ease, box-shadow 800ms ease; 
 }
 .about-modal {
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
-  position: fixed;
+  overflow: auto;
+  
+  position: relative;
   height: 100vh;
   z-index: 10;
   top: 0rem;
@@ -101,6 +101,18 @@ canvas:active, canvas:focus {
   background-color: $white;
   pointer-events: auto;
   transition: all 800ms ease;
+  animation: 0.6s ease 0s 1 slideInFromTop;
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 .about-modal-closed {
   font-size: 0rem;
@@ -120,6 +132,9 @@ canvas:active, canvas:focus {
 
 }
 .about-modal-inner {
+
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
   font-size: 3.2rem;
   height: 100%;
   width: 100%;
@@ -138,13 +153,19 @@ canvas:active, canvas:focus {
   box-shadow: 0px 10px 8px $splitPea;
   background-image: url('./stars.gif');
 }
+.about-modal-inner-no-bg {
+  background-image: none;
+}
 .about-modal-inner-mobile {
+  position: relative;
   border-radius: 0;
   height: 100%;
   width: 100%;
-  padding-top: 10rem;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
+  padding-bottom: 10rem;
+    
+  padding-top: 19rem;
+  
+ 
 }
 a {
   color: $white !important;
@@ -161,7 +182,7 @@ a {
   padding: 2px 12px;
   font-weight: 200;
   cursor: pointer;
-  border-radius:8px;
+  border-radius:0px;
   
   transition: all 400ms ease; 
 }
@@ -176,6 +197,11 @@ a {
   transition: all 400ms ease; 
 }
 .about-modal-x-mobile {
+  position: absolute;
+  z-index: 1000;
+    font-family: 'Syne';
+    top: 0.625rem;
+    right: 3rem;
   font-size: 3.2rem;
   border: 2px solid $white;
   padding: 6px 24px;

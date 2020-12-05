@@ -27,13 +27,15 @@ function MobilePage(props) {
   return(
     <React.Fragment>
     
+    <span className={(isMobile ? "about-modal-x about-modal-x-mobile" : "about-modal-x")} onClick={props.closeModal}><Link to="/">X</Link></span>
     <div className={(props.open ? "about-modal" : "about-modal-closed")}>
     <div className={(isMobile ? "about-modal-inner about-modal-inner-mobile" : "about-modal-inner")}>
     
-    <span className={(isMobile ? "about-modal-x about-modal-x-mobile" : "about-modal-x")} onClick={props.closeModal}><Link to="/">X</Link></span>
     
-    <span className="f32 tl syne x pt20">{props.title}</span>
+
+    <span className="f32 tl syne x pt50">{props.title}</span>
     <span className="f16 tl mabry about-modal-content">{props.text}</span>
+
     </div>
     </div>
     </React.Fragment>
